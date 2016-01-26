@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--
+
+    This User Mapper Hold the user's information and function list.
+
+-->
+
+<mapper namespace="com.deppon.mbi.agile.core.domain.auth.User">
+    <!-- User Domain Mapping -->
+    <resultMap id="userResultMapper" type="com.deppon.mbi.agile.core.domain.auth.User">
+        <result property="id" column="id" javaType="String" jdbcType="VARCHAR"/>
+        <result property="name" column="name" javaType="String" jdbcType="VARCHAR"/>
+        <result property="pwd" column="pwd" javaType="String" jdbcType="VARCHAR"/>
+        <result property="status" column="status" javaType="int" jdbcType="INTEGER"/>
+        <result property="email" column="email" javaType="String" jdbcType="VARCHAR"/>
+        <result property="phone" column="phone" javaType="String" jdbcType="VARCHAR"/>
+        <result property="createDate" column="create_date" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        <collection property="functions" column="id" ofType="com.deppon.mbi.agile.core.domain.auth.Function"
+                    select="functionSelect"/>
+        <collection property="roles" column="id" ofType="com.deppon.mbi.agile.core.domain.auth.Role"
+                    select="roleSelect"/>
+    </resultMap>
+
+    <!-- Function Domain Mapping -->
+    <resultMap id="functionResultMapper" type="com.deppon.mbi.agile.core.domain.auth.Function">
+        <result property="id" column="fid" javaType="int" jdbcType="INTEGER"/>
+        <result property="name" column="name" javaType="String" jdbcType="VARCHAR"/>
+        <result property="userId" column="uid" javaType="String" jdbcType="VARCHAR"/>
+        <collection property="functions" ofType="com.deppon.mbi.agile.core.domain.auth.Function"
+                    column="{id=fid,userId=uid}" select="subFunctionSelect"/>
+    </resultMap>
+
+    <!-- Role Domain Mapping -->
+    <resultMap id="roleResultMapper" type="com.deppon.mbi.agile.core.domain.auth.Role">
+        <result property="id" column="id" javaType="int" jdbcType="INTEGER"/>
+        <result property="name" column="name" javaType="String" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="functionSelect" resultMap="functionResultMapper">
+        SELECT
+            f.id fid, f.name, u.id uid
+        FROM
+            user u,
+            function f,
+            roles r,
+            user_roles ur,
+            function_roles fr
+        WHERE
+            u.id = ur.user_id AND ur.role_id = r.id
+                AND ur.role_id = fr.role_id
+                AND fr.function_id = f.id
+                AND u.id=#{id,jdbcType=VARCHAR}
+        GROUP BY f.id , f.name , u.id
+    </select>
+
+    <select id="subFunctionSelect" resultMap="functionResultMapper">
+        SELECT
+            f.id fid, f.name, u.id uid
+        FROM
+            user u,
+            function f,
+            roles r,
+            user_roles ur,
+            function_roles fr
+        WHERE
+            u.id = ur.user_id AND ur.role_id = r.id
+                AND ur.role_id = fr.role_id
+                AND fr.function_id = f.id
+                AND u.id = #{userId,jdbcType=VARCHAR}
+                AND f.pid = #{id,jdbcType=INTEGER}
+        GROUP BY f.id , f.name , u.id
+    </select>
+
+    <select id="roleSelect" resultMap="roleResultMapper">
+        SELECT
+            r.id, r.name
+        FROM
+            user_roles ur,
+            roles r
+        WHERE
+            ur.role_id = r.id
+        AND user_id =  #{userId,jdbcType=VARCHAR}
+    </select>
+
+    <!-- Query user by username and password -->
+    <select id="query" resultMap="userResultMapper">
+        SELECT
+            u.id,
+            u.name,
+            u.pwd,
+            u.create_date,
+            u.status,
+            u.phone,
+            u.email
+        FROM
+            user u
+        WHERE
+            u.id = #{id,jdbcType=VARCHAR}
+    </select>
+
+    <insert id="saveUser" parameterType="com.deppon.mbi.agile.core.domain.auth.User">
+        INSERT INTO user (
+            id,
+            name,
+            pwd,
+            email,
+            phone,
+            status,
+            create_date
+        )
+        VALUES
+            (
+              #{id},#{name},#{pwd},#{email},#{phone}#{status},#{createDate}
+            );
+    </insert>
+
+    <insert id="saveUserRole" parameterType="map">
+        INSERT INTO user_roles (user_id, role_id)
+        VALUES
+        (#{userId},#{roleId});
+    </insert>
+
+</mapper>

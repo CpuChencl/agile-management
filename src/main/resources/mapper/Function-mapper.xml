@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--
+
+    Function Mapper
+
+-->
+
+<mapper namespace="com.deppon.mbi.agile.core.domain.auth.Function">
+
+    <!-- Simple Function Domain Mapping -->
+    <resultMap id="SimpleFunctionResultMapper" type="com.deppon.mbi.agile.core.domain.auth.Function">
+        <result property="functionId" column="function_id" javaType="int" jdbcType="INTEGER"/>
+        <result property="functionName" column="function_name" javaType="String" jdbcType="VARCHAR"/>
+    </resultMap>
+
+
+    <!-- Query function by id -->
+    <select id="query" resultMap="SimpleFunctionResultMapper">
+        SELECT
+          id,
+          name
+        FROM
+          FUNCTION
+        WHERE
+          id = #{id,jdbcType=INTEGER}
+    </select>
+
+</mapper>
