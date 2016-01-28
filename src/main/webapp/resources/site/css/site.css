@@ -24,6 +24,11 @@ body {
     border-right: 1px solid #eee;
 }
 
+/* Main Content */
+.site-main{
+    padding-left:95px;
+    padding-top:10px;
+}
 
 .site-small-span{
     padding-right:6px;

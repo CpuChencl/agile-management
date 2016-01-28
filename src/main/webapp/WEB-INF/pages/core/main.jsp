@@ -24,7 +24,7 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">Agile Management</a>
+            <a class="navbar-brand" href="#">Agile Management Platform</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <form class="navbar-form navbar-left" role="search">
@@ -161,7 +161,7 @@
                 </li>
             </ul>
         </div>
-        <div class="col-md-11.5">
+        <div class="col-md-11.5 site-main">
             Here inflate main page...
         </div>
     </div>
