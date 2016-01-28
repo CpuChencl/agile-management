@@ -32,4 +32,4 @@ Enter the project directory, then execute:
 ```
 mvn -DskipTests clean package tomcat7:run
 ```
-Then visit ***http://localhost:8080/login*** in the browser.
+Then visit ***http://localhost:8080/login*** in the browser. Login Account: root/root
