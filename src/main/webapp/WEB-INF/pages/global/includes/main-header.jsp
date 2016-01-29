@@ -97,53 +97,51 @@
     <div class="row">
         <div class="col-md-1.5 site-sidebar">
             <ul class="nav nav-sidebar">
-                <li class="active">
+                <li class="active home">
                     <a href="#">
                         <span class="glyphicon glyphicon-home site-small-span"></span>
                         主页
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#" class="task">
                         <span class="glyphicon glyphicon-tasks site-small-span"></span>
                         任务
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#" class="document">
                         <span class="glyphicon glyphicon-duplicate site-small-span"></span>
                         文档
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#" class="weeklyReport">
                         <span class="glyphicon glyphicon-file site-small-span"></span>
                         周报
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#" class="debate">
                         <span class="glyphicon glyphicon-comment site-small-span"></span>
                         讨论
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#" class="share">
                         <span class="glyphicon glyphicon-share site-small-span"></span>
                         分享
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#" class="setting">
                         <span class="glyphicon glyphicon-cog site-small-span"></span>
                         设置
                     </a>
                 </li>
             </ul>
         </div>
-        <div class="col-md-11.5" style="padding-left:95px;padding-top:10px;">
-
-
+        <div class="col-md-11.5 main-content">
 
         <%--</div>--%>
     <%--</div>--%>

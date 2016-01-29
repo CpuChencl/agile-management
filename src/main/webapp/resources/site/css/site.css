@@ -24,6 +24,11 @@ body {
     border-right: 1px solid #eee;
 }
 
-.site-small-span{
+.site-small-span {
     padding-right:6px;
+}
+
+/* Main area of content in the right of the page */
+.main-content {
+    margin: 10px 15px 10px 95px;
 }

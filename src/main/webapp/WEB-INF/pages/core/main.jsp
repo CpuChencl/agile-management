@@ -11,20 +11,20 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <title>Main</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="<c:url value='/resources/site/css/site.css'/>" rel="stylesheet">
     <link href="<c:url value='/resources/bootstrap/css/bootstrap.min.css'/>" rel="stylesheet">
     <link href="<c:url value='/resources/bootstrap/css/bootstrap-theme.min.css'/>" rel="stylesheet">
-    <script src="<c:url value='/resources/jquery/jquery-2.1.4.min.js'/>"></script>
-    <script src="<c:url value='/resources/bootstrap/js/bootstrap.min.js'/> "></script>
-    <title>Main</title>
 </head>
 <body>
-<jsp:include page="../global/includes/main-header.jsp"/>
+    <jsp:include page="../global/includes/main-header.jsp"/>
 
-Inflate main page at this place...
+    Inflate main page at this place...
 
-<jsp:include page="../global/includes/main-footer.jsp"/>
+    <jsp:include page="../global/includes/main-footer.jsp"/>
+    <script src="<c:url value='/resources/jquery/jquery-2.1.4.min.js'/>"></script>
+    <script src="<c:url value='/resources/bootstrap/js/bootstrap.min.js'/> "></script>
 </body>
 </html>
