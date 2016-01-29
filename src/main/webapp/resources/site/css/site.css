@@ -1,0 +1,29 @@
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+    padding-top: 50px;
+}
+/*
+ * Top navigation
+ * Hide default border to remove 1px line.
+ */
+.navbar-fixed-top {
+    border: 0;
+}
+/* Sidebar */
+.site-sidebar {
+    top:51px;
+    bottom: 0;
+    left: 0;
+    position: fixed!important;
+    z-index: 1000;
+    display: block;
+    padding-top: 20px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background-color: #f5f5f5;
+    border-right: 1px solid #eee;
+}
+
+.site-small-span{
+    padding-right:6px;
+}
