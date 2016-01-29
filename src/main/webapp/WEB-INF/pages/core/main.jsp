@@ -26,5 +26,6 @@
     <jsp:include page="../global/includes/main-footer.jsp"/>
     <script src="<c:url value='/resources/jquery/jquery-2.1.4.min.js'/>"></script>
     <script src="<c:url value='/resources/bootstrap/js/bootstrap.min.js'/> "></script>
+    <script type="text/javascript" src="<c:url value='/resources/site/js/index.js'/>"></script>
 </body>
 </html>

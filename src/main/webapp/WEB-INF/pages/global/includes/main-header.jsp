@@ -56,32 +56,32 @@
                         新建
                     </a>
                     <ul class="dropdown-menu">
-                        <li>
+                        <li class="newTask">
                             <a href="#">
                                 <span class="glyphicon glyphicon-tasks site-small-span"></span>
                                 新建任务
                             </a>
                         </li>
-                        <li>
+                        <li class="newTag">
                             <a href="#">
                                 <span class="glyphicon glyphicon-tags site-small-span"></span>
                                 新建便签
                             </a>
                         </li>
-                        <li>
+                        <li class="newWeeklyReport">
                             <a href="#">
                                 <span class="glyphicon glyphicon-file site-small-span"></span>
                                 新建周报
                             </a>
                         </li>
-                        <li>
+                        <li class="newDebate">
                             <a href="#">
                                 <span class="glyphicon glyphicon-comment site-small-span"></span>
                                 新建讨论
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="#" class="shareFile">
                                 <span class="glyphicon glyphicon-share site-small-span"></span>
                                 分享文档
                             </a>
@@ -93,56 +93,53 @@
     </div>
 </nav>
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-1.5 site-sidebar">
-            <ul class="nav nav-sidebar">
-                <li class="active home">
-                    <a href="#">
-                        <span class="glyphicon glyphicon-home site-small-span"></span>
-                        主页
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="task">
-                        <span class="glyphicon glyphicon-tasks site-small-span"></span>
-                        任务
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="document">
-                        <span class="glyphicon glyphicon-duplicate site-small-span"></span>
-                        文档
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="weeklyReport">
-                        <span class="glyphicon glyphicon-file site-small-span"></span>
-                        周报
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="debate">
-                        <span class="glyphicon glyphicon-comment site-small-span"></span>
-                        讨论
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="share">
-                        <span class="glyphicon glyphicon-share site-small-span"></span>
-                        分享
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="setting">
-                        <span class="glyphicon glyphicon-cog site-small-span"></span>
-                        设置
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="col-md-11.5 main-content">
+<div class="site-sidebar">
+    <ul class="nav nav-sidebar">
+        <li class="active home">
+            <a href="#">
+                <span class="glyphicon glyphicon-home site-small-span"></span>
+                主页
+            </a>
+        </li>
+        <li class="task">
+            <a href="#">
+                <span class="glyphicon glyphicon-tasks site-small-span"></span>
+                任务
+            </a>
+        </li>
+        <li class="file">
+            <a href="#">
+                <span class="glyphicon glyphicon-duplicate site-small-span"></span>
+                文档
+            </a>
+        </li>
+        <li class="weeklyReport">
+            <a href="#">
+                <span class="glyphicon glyphicon-file site-small-span"></span>
+                周报
+            </a>
+        </li>
+        <li class="debate">
+            <a href="#">
+                <span class="glyphicon glyphicon-comment site-small-span"></span>
+                讨论
+            </a>
+        </li>
+        <li class="share">
+            <a href="#">
+                <span class="glyphicon glyphicon-share site-small-span"></span>
+                分享
+            </a>
+        </li>
+        <li class="setting">
+            <a href="#">
+                <span class="glyphicon glyphicon-cog site-small-span"></span>
+                设置
+            </a>
+        </li>
+    </ul>
+</div>
 
-        <%--</div>--%>
-    <%--</div>--%>
+<div class="main-content">
+
 <%--</div>--%>
