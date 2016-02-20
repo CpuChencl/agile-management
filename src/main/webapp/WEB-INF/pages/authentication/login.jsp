@@ -15,7 +15,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="<c:url value='/resources/bootstrap/css/bootstrap.min.css'/>" rel="stylesheet">
     <link href="<c:url value='/resources/bootstrap/css/bootstrap-theme.min.css'/>" rel="stylesheet">
-    <script src="<c:url value='/resources/bootstrap/js/bootstrap.min.js'/> "></script>
 
     <title>Login</title>
     <style>
@@ -41,38 +40,37 @@
         .form-signin .form-control:focus {
             z-index: 2;
         }
-        .form-signin input[type="text"] {
+        .form-signin .username {
             margin-bottom: -1px;
             border-bottom-right-radius: 0;
             border-bottom-left-radius: 0;
         }
-        .form-signin input[type="password"] {
+        .form-signin .password {
             margin-bottom: 10px;
             border-top-left-radius: 0;
             border-top-right-radius: 0;
         }
-
-
     </style>
 </head>
 <body>
-
-<div class="container">
-    <c:url value="/login" var="loginUrl"/>
-    <form class="form-signin" method="post" action="${loginUrl}">
-        <h2 class="form-signin-heading">
-            <c:if test="${requestScope.msg != null}">
-                <p>
+    <div class="container">
+        <c:url value="/login" var="loginUrl"/>
+        <form class="form-signin" method="post" action="${loginUrl}">
+            <h2 class="form-signin-heading">
+                <c:if test="${requestScope.msg != null}">
+                    <p>
                         ${requestScope.msg}
-                </p>
-            </c:if>
-        </h2>
-        <label for="username" class="sr-only">UserName</label>
-        <input type="text" id="username" name="username" class="form-control" placeholder="UserName" required autofocus>
-        <label for="pwd" class="sr-only">Password</label>
-        <input type="password" id="pwd" name="pwd" class="form-control" placeholder="Password" required>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-    </form>
-</div>
+                    </p>
+                </c:if>
+            </h2>
+            <label for="username" class="sr-only">UserName</label>
+            <input type="text" id="username" name="username" class="form-control username" placeholder="UserName" required autofocus>
+            <label for="pwd" class="sr-only">Password</label>
+            <input type="password" id="pwd" name="pwd" class="form-control password" placeholder="Password" required>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        </form>
+    </div>
+    <script src="<c:url value='/resources/jquery/jquery-2.1.4.min.js'/> "></script>
+    <script src="<c:url value='/resources/bootstrap/js/bootstrap.min.js'/> "></script>
 </body>
 </html>

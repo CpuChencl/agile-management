@@ -1,6 +1,6 @@
 /* Move down content because we have a fixed navbar that is 50px tall */
-body {
-    padding-top: 50px;
+html, body {
+    height: 100%;
 }
 /*
  * Top navigation
@@ -11,12 +11,12 @@ body {
 }
 /* Sidebar */
 .site-sidebar {
-    top:51px;
+    top:50px;
     bottom: 0;
     left: 0;
+    width: 80px;
     position: fixed!important;
     z-index: 1000;
-    display: block;
     padding-top: 20px;
     overflow-x: hidden;
     overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
@@ -24,6 +24,12 @@ body {
     border-right: 1px solid #eee;
 }
 
-.site-small-span{
-    padding-right:6px;
+.site-small-span {
+    padding-right: 2px;
+}
+
+/* Main area of content in the right of the page */
+.main-content {
+    margin: 50px 0 0 80px;
+    padding: 25px;
 }
