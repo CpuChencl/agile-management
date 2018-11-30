@@ -20,12 +20,19 @@
                 <value>classpath:jdbc.properties</value>
                 <value>classpath:redis.properties</value>
                 <value>classpath:application.properties</value>
+                <value>classpath:mq.properties</value>
+                <value>classpath:netty.properties</value>
+                <value>classpath:zk.properties</value>
             </list>
         </property>
     </bean>
-
+     <bean id="startSchedule" class="com.deppon.mbi.agile.core.job.start.StartSchedule">
+    	<constructor-arg index="0" value="com.deppon.mbi.agile.core.job.task.Tasks" />
+    	<constructor-arg index="1" value="addDeamonTask" />
+    	<constructor-arg index="2" value="0-59/30 * * * * * *" />
+    </bean>
 
     <import resource="application-datasource.xml"/>
     <import resource="application-beans.xml"/>
-    <!--<import resource="application-redis.xml"/>-->
+    <import resource="spring-rabbit.xml"/>
 </beans>

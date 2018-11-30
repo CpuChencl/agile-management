@@ -11,7 +11,7 @@
     <packaging>war</packaging>
 
     <properties>
-        <jdk.version>1.7</jdk.version>
+        <jdk.version>1.8</jdk.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring.version>4.2.4.RELEASE</spring.version>
         <spring.security.version>4.0.3.RELEASE</spring.security.version>
@@ -21,7 +21,6 @@
         <redis.client.version>2.7.3</redis.client.version>
         <spring.redis.version>1.6.2.RELEASE</spring.redis.version>
         <mysql.driver.version>5.1.35</mysql.driver.version>
-        <javax.mail.version>1.4.7</javax.mail.version>
         <junit.version>4.12</junit.version>
         <slf4j.version>1.7.12</slf4j.version>
         <log4j.version>1.2.17</log4j.version>
@@ -130,20 +129,6 @@
             <version>2.4</version>
         </dependency>
 
-        <!-- Java Mail -->
-        <dependency>
-            <groupId>javax.mail</groupId>
-            <artifactId>mail</artifactId>
-            <version>${javax.mail.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-email</artifactId>
-            <version>1.4</version>
-        </dependency>
-
-
         <!-- AOP -->
         <dependency>
             <groupId>org.aspectj</groupId>
@@ -250,6 +235,27 @@
             <artifactId>el-api</artifactId>
             <version>2.2</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+	      <groupId>com.rabbitmq</groupId>
+	      <artifactId>amqp-client</artifactId>
+	      <version>3.5.2</version>
+	    </dependency>
+	    <dependency>
+	        <groupId>org.springframework.amqp</groupId>
+	        <artifactId>spring-rabbit</artifactId>
+	        <version>1.4.5.RELEASE</version>
+	        <exclusions>
+	        	<exclusion>  
+		             <groupId>org.springframework</groupId>  
+		             <artifactId>spring-core</artifactId>  
+	         	</exclusion>  
+	        </exclusions>
+	    </dependency>
+	    <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+            <version>4.1.31.Final</version>
         </dependency>
     </dependencies>
 
